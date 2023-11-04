@@ -25,12 +25,12 @@ def on_connect(client, userdata, flags, rc):
 
 client.on_connect = on_connect
 
-client.connect("52.188.161.154", 1883, 60)
+client.connect("localhost", 1883, 60)
 
 # Parametros
 max_num_plate=10 # maximo numero de placas a almacenar en el fichero .csv
 
-img = ('C:/Users/obed hipolito/Documents/RoaPlacasVehiculares/imagen.jpg')
+img = ('C:/Users/Blue/Documents/RoaPlacasVehiculares/temp.jpg')
 
 #funcion para leer la placa
 def leer_placa(img):
@@ -45,7 +45,7 @@ def leer_placa(img):
             # Se le envia el token a la APi de la web http://docs.platerecognizer.com/
             # Aqui tienes que colocar tu propio Token suscribiendote a la pagina
             files=dict(upload=fp),
-            headers={'Authorization': 'Token 0d1c42c242234ca890fd1133106df25952fe1e28 '})
+            headers={'Authorization': 'Token ec0e382b2c69372354d6732eab5739356657ae69 '})
     return response.json() #retorna el json con los datos procesados
 
 # funcion para validar y guardar la placa leida

@@ -14,12 +14,8 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 # Establish a connection
-client.connect("52.188.161.154", 1883, 60)
+client.connect("localhost", 1883, 60)
 # Publish a message
 client.publish('emqtt',payload='Hello World',qos=0)
 
 client.loop_forever()
-
-
-
-
